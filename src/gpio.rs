@@ -1,5 +1,9 @@
 
-struct Pin {
+const GPIO_BASE: u32 = 0x20200000;
+const GPF_SET: isize = 7;
+const GPF_CLR: isize = 10;
+
+pub struct Pin {
 	pub num: u32,
 	fun_sel: *mut u32,
 	bit_sel: u32,
@@ -8,6 +12,7 @@ struct Pin {
 	bit_set_clr: u32,
 }
 
+#[allow(dead_code)]
 impl Pin {
 	pub fn new(pin: u32) -> Pin {
 		let base = GPIO_BASE as *mut u32;

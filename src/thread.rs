@@ -1,6 +1,7 @@
 
 const RPI_SYSTIMER_BASE: u32 = 0x20003000;
 
+#[allow(dead_code)]
 struct RpiSysTimer {
 	control_status: u32,
 	pub counter_lo: u32,
